@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     @IBAction func playPressed(_ sender: Any) {
         player.play()
-        timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(ViewController.updateScrubber), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateScrubber), userInfo: nil, repeats: true)
     }
     
     @IBAction func pausePressed(_ sender: Any) {

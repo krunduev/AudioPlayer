@@ -24,6 +24,9 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z5-2b-TAl">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bib-1k-FDU"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="pause" id="3Ab-GS-WMI">
                                         <connections>
@@ -31,7 +34,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cyp-g7-W7L"/>
-                                    <barButtonItem systemItem="stop" id="wUy-F3-BYI">
+                                    <barButtonItem title="Stop" id="wUy-F3-BYI">
                                         <connections>
                                             <action selector="stopPressed:" destination="BYZ-38-t0r" id="Mtl-EU-M6b"/>
                                         </connections>
@@ -40,6 +43,9 @@
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA5-9S-DJH">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FWe-wJ-6jN"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Player" id="gWv-0n-XOM">
                                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="bYq-it-CDz">
@@ -50,49 +56,53 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bck-iG-1Yk">
-                                <rect key="frame" x="18" y="359" width="378" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="p33-EQ-LJe"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="RFw-Gh-He5"/>
-                                </connections>
-                            </slider>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dzogchen_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="QGF-Lc-sVa">
-                                <rect key="frame" x="71" y="99" width="272" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="ePI-Y1-9Tx"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3eG-wa-bGv">
+                                <rect key="frame" x="20" y="651" width="386" height="30"/>
+                            </stackView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-Eh-Y8E">
-                                <rect key="frame" x="18" y="412" width="378" height="31"/>
+                                <rect key="frame" x="18" y="651" width="378" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="aui-pM-HL3"/>
+                                    <constraint firstAttribute="height" constant="30" id="QnT-7c-5Ay"/>
                                 </constraints>
                                 <connections>
                                     <action selector="scrubberMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="BHq-Ek-OON"/>
                                 </connections>
                             </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dzogchen_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="QGF-Lc-sVa">
+                                <rect key="frame" x="0.0" y="64" width="414" height="532"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bck-iG-1Yk">
+                                <rect key="frame" x="18" y="604" width="378" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ppC-hc-VGb"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="RFw-Gh-He5"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QGF-Lc-sVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="3Ds-tu-Skq"/>
-                            <constraint firstItem="CA5-9S-DJH" firstAttribute="trailing" secondItem="7Z5-2b-TAl" secondAttribute="trailing" id="3FU-q8-c40"/>
-                            <constraint firstItem="QGF-Lc-sVa" firstAttribute="centerX" secondItem="Bck-iG-1Yk" secondAttribute="centerX" id="80U-hz-LOd"/>
-                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IWk-1K-ZVR"/>
-                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="top" secondItem="Bck-iG-1Yk" secondAttribute="bottom" constant="23" id="J50-Qw-ow1"/>
-                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="top" secondItem="QGF-Lc-sVa" secondAttribute="bottom" constant="20" id="Nuk-T3-wsp"/>
-                            <constraint firstItem="QGF-Lc-sVa" firstAttribute="top" secondItem="CA5-9S-DJH" secondAttribute="bottom" constant="35" id="ORa-31-ogm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Z5-2b-TAl" secondAttribute="bottom" id="PH6-dA-RaJ"/>
-                            <constraint firstItem="CA5-9S-DJH" firstAttribute="leading" secondItem="7Z5-2b-TAl" secondAttribute="leading" id="iMr-MS-mQX"/>
-                            <constraint firstItem="CA5-9S-DJH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="m1N-61-dta"/>
-                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mLx-NN-Ipl"/>
-                            <constraint firstItem="7Z5-2b-TAl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nNw-IO-gso"/>
-                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="njP-sC-tPq"/>
-                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oaO-eI-H0c"/>
-                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qld-na-sJ6"/>
-                            <constraint firstAttribute="trailing" secondItem="7Z5-2b-TAl" secondAttribute="trailing" id="tb3-N5-EOG"/>
+                            <constraint firstItem="7Z5-2b-TAl" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="1CZ-lZ-lhL"/>
+                            <constraint firstItem="CA5-9S-DJH" firstAttribute="trailing" secondItem="7Z5-2b-TAl" secondAttribute="trailing" id="2xu-Jz-un5"/>
+                            <constraint firstItem="CA5-9S-DJH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8w5-5a-bGX"/>
+                            <constraint firstAttribute="trailing" secondItem="QGF-Lc-sVa" secondAttribute="trailing" id="ABB-UF-to7"/>
+                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ATX-1Y-V8J"/>
+                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="top" secondItem="QGF-Lc-sVa" secondAttribute="bottom" constant="8" id="CSN-YM-k1P"/>
+                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="top" secondItem="Bck-iG-1Yk" secondAttribute="bottom" constant="17" id="Fqb-wM-IRn"/>
+                            <constraint firstItem="QGF-Lc-sVa" firstAttribute="top" secondItem="CA5-9S-DJH" secondAttribute="bottom" id="GB9-9h-xQQ"/>
+                            <constraint firstItem="CA5-9S-DJH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gal-lc-lIY"/>
+                            <constraint firstItem="3eG-wa-bGv" firstAttribute="bottom" secondItem="cN8-Eh-Y8E" secondAttribute="bottom" id="Glt-55-Stl"/>
+                            <constraint firstItem="QGF-Lc-sVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Grd-Ew-xSb"/>
+                            <constraint firstItem="3eG-wa-bGv" firstAttribute="top" secondItem="cN8-Eh-Y8E" secondAttribute="top" id="Hs6-T9-8hr"/>
+                            <constraint firstAttribute="trailing" secondItem="CA5-9S-DJH" secondAttribute="trailing" id="Kru-Z3-0gJ"/>
+                            <constraint firstItem="CA5-9S-DJH" firstAttribute="leading" secondItem="7Z5-2b-TAl" secondAttribute="leading" id="LuM-T9-WaL"/>
+                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aCb-5n-AxW"/>
+                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="leading" secondItem="3eG-wa-bGv" secondAttribute="leading" id="ec1-jQ-F9z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3eG-wa-bGv" secondAttribute="trailing" constant="-12" id="otg-hj-ZnO"/>
+                            <constraint firstItem="7Z5-2b-TAl" firstAttribute="top" secondItem="cN8-Eh-Y8E" secondAttribute="bottom" constant="11" id="sAV-ye-CsI"/>
+                            <constraint firstItem="Bck-iG-1Yk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yBC-bF-qh3"/>
+                            <constraint firstItem="cN8-Eh-Y8E" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="z87-dc-Ait"/>
                         </constraints>
                     </view>
                     <connections>
@@ -102,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72.799999999999997" y="69.715142428785612"/>
+            <point key="canvasLocation" x="72.463768115942031" y="69.293478260869577"/>
         </scene>
     </scenes>
     <resources>
